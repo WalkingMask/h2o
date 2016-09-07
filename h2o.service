@@ -1,5 +1,5 @@
 [Unit]
-Description=H2O
+Description=an optimized HTTP server with support for HTTP/1.x and HTTP/2
 
 [Service]
 Type=forking
