@@ -45,12 +45,12 @@ fi
 if [ -e "/etc/systemd/system//h2o.service" ]; then
   rm /etc/systemd/system/h2o.service
   mv ./h2o.service /etc/systemd/system/h2o.service
-  chmod 644 /etc/systemd/system/h2o.service/h2o.service
-  chown root /etc/systemd/system/h2o.service/h2o.service
+  chmod 644 /etc/systemd/system/h2o.service
+  chown root /etc/systemd/system/h2o.service
 else
   mv ./h2o.service /etc/systemd/system/h2o.service
-  chmod 644 /etc/systemd/system/h2o.service/h2o.service
-  chown root /etc/systemd/system/h2o.service/h2o.service
+  chmod 644 /etc/systemd/system/h2o.service
+  chown root /etc/systemd/system/h2o.service
 fi
 
 systemctl daemon-reload
