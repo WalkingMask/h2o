@@ -14,7 +14,7 @@
 VM上などで
 
 `````
-git clone https://github.com/WalkingMask/h2o_installer.git
+git clone https://github.com/walkingmask/h2o_installer.git
 cd h2o_installer
 sudo sh run.sh
 `````
