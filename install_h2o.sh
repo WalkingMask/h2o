@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 
-(apt-get install wget tar locate git cmake build-essential checkinstall autoconf pkg-config libtool python-sphinx wget libcunit1-dev nettle-dev libyaml-dev libuv-dev -y)&
+apt-get install wget tar locate git cmake build-essential checkinstall autoconf pkg-config libtool python-sphinx wget libcunit1-dev nettle-dev libyaml-dev libuv-dev -y
 
 # install h2o
 if [ -x "/usr/local/bin/h2o" ]; then
@@ -15,8 +15,9 @@ else
     exit 1
   fi
 
-  tar xzf v2.0.1.tar.gz
-  cd h2o-2.0.1
+  wget https://github.com/h2o/h2o/archive/v2.0.3.tar.gz
+  tar xzf v2.0.3.tar.gz
+  cd h2o-2.0.3
   cmake -DWITH_BUNDLED_SSL=on .
   make
   sudo make install
