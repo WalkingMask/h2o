@@ -1,11 +1,13 @@
 [Unit]
 Description=an optimized HTTP server with support for HTTP/1.x and HTTP/2
+After=syslog.target network.target remote-fs.target nss-lookup.target
 
 [Service]
 Type=forking
 PIDFile=/var/run/h2o.pid
 ExecStart=/usr/local/bin/h2o -c /usr/local/etc/h2o/h2o.conf -m daemon
 ExecReload=/usr/bin/kill -HUP $MAINPID
+ExecStop=/bin/kill -s QUIT $MAINPID
 LimitNOFILE=infinity
 
 [Install]
