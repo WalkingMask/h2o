@@ -9,13 +9,19 @@ else
   exit 1
 fi
 
-# environment-dependent settings
-if [ -e "./pre/pre.sh" ]; then
-  sh ./pre/pre.sh
+# pre optional settings
+if [ -e "./opt/pre.sh" ]; then
+  sh ./opt/pre.sh
 fi
 
+# main
 sh ./src/aptget.sh
 sh ./src/install.sh
 sh ./src/service.sh
+
+# post optional settings
+if [ -e "./opt/post.sh" ]; then
+  sh ./opt/post.sh
+fi
 
 exit 0
