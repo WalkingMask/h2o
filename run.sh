@@ -2,7 +2,7 @@
 set -eu
 
 # require root user
-if [ "$UID" -eq 0 ];then
+if [ "`id -u $USER`" = "0" ];then
   :
 else
   echo "error. please switch user root."
