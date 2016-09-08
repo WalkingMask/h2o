@@ -6,10 +6,10 @@ if [ -x "/usr/local/bin/h2o" ]; then
   :
 else
 
-  if [ "`echo ${PWD##*/}`" = "h2o" ]; then
+  if [ "`echo ${PWD##*/}`" = "h2o_installer" ]; then
     :
   else
-    echo "error. please cd to h2o/ ."
+    echo "error. please cd to h2o_installer/ ."
     exit 1
   fi
 
