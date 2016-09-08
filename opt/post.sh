@@ -20,4 +20,11 @@ else
   cp ./opt/h2o_isucon5.conf /usr/local/etc/h2o/h2o.conf
 fi
 
+# restart h2o
+if [ "`systemctl is-active h2o`" = "unknown" ]; then
+  systemctl start h2o
+else
+  systemctl restart h2o
+fi
+
 exit 0
